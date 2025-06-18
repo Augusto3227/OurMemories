@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddMemorie</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div id="estrelas-container"></div>
+  <header>
+    <!-- Título no index-->
+    <h1>
+        <span class="coracao amarelo">💛</span>
+        <span class="titulocentro">OurMemories</span>
+        <span class="coracao azul">💙</span>
+      </h1>
+  </header>
+  <nav>
+    <a href="home.html" >Tela Inicial</a>
+    <a href="index.html" class="active">Portifólio</a>
+  </nav>
+  <main>
+   <div id="layout">
+    <div class="subnav">
+      <a href="index.html" >Memories</a>
+      <a href="edit.html" >Edit</a>
+      <a href="add.html" class="active">Add Memories</a>
+    </div>
+        <div id="main">
+            <div id="memoryDiv">
+                <div class="memory">
+                        <div class="textDiv" id="r"><select name="author" id="author" hidden>
+                                <option value="Augusto">Augusto</option>
+                                <option value="Malu">Malu</option>
+                            </select></select></div>
+                        <div id="imgDiv">
+                            <div id="drop-area">
+                                <img id="preview-img" alt="Preview" />
+                                <p>Drag & drop or click to upload</p>
+                            </div>
+                            <input type="file" id="input-file" name="file" accept="image/*" />
+                        </div>
+                        <div class="textDiv">
+                            <div>
+                                <h3><input type="text" name="title" placeholder="Título" hidden></h3>
+                            </div>
+                            <div>
+                                <p><input type="date" name="data" placeholder="Data" hidden></p>
+                            </div>
+
+                        </div>
+                        <div class="description">
+                            <p><textarea name="description" id="description cols="20" rows="5"></textarea></p>
+                            <div class="textDiv">
+                                <button type="submit" id="addButton">Adicionar Memória</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js" defer></script>
+<script src="/js/uploadimg.js" type="module" defer></script>
+<script src="/js/form.js" type="module" defer></script>
+<script src="/js/stars.js"></script>
+
+</html>

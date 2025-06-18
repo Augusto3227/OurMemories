@@ -1,0 +1,330 @@
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black;
+  font-family: 'Rajdhani', sans-serif;
+  color: white;
+
+}
+
+header {
+  position: relative;
+  top: 0; left: 0; right: 0;
+  padding: 20px 0 1px;
+  text-align: center;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#estrelas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* As estrelas não vão atrapalhar cliques */
+}
+.estrela {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: brilhar 2s infinite alternate;
+}
+   /* Faz o efeito de brilhar a estrela */
+@keyframes brilhar {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+h1 {
+
+  font-size: 48px;
+  text-shadow: 0 0 10px white, 0 0 20px white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+}
+
+.coracao {
+  font-size: 40px;
+  text-shadow: 0 0 10px, 0 0 20px;
+}
+
+.amarelo {
+  color: yellow;
+  text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+}
+
+.azul {
+  color: #00ccff;
+  text-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+}
+
+.titulocentro {
+  font-size: 60px;
+}
+
+/* Navbar fixa e centralizada */
+nav {
+  position: relative;
+  top: 60px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+/* Botões a */
+nav a {
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 18px;
+  border-radius: 0;
+  position: relative;
+  transition: text-shadow 0.3s;
+  display: inline-block;
+}
+
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+/* quando hover, faz a linha crescer e muda a cor do texto */
+nav a:hover {
+  color: white;
+  text-shadow: 0 0 8px white, 0 0 12px white;  /* ou outra cor que quiser */
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* para o link ativo, linha fixa e cor diferente */
+nav a.active {
+  color: white;
+  text-shadow: 0 0 8px white, 0 0 12px white; 
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+
+
+
+
+
+/* Subnavbar logo abaixo da navbar principal */
+.subnav {
+  margin-top: 10px; /* Aproxima a subnav da navbar principal */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 4px 0;
+  z-index: 998;
+  position: relative;
+}
+
+.subnav a {
+  text-decoration: none;
+  color: white;
+  padding: 6px 18px;
+  font-size: 16px;
+  border-radius: 0;
+  position: relative;
+  transition: text-shadow 0.3s;
+  display: inline-block;
+}
+
+.subnav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.subnav a:hover {
+  color: white;
+  text-shadow: 0 0 8px white, 0 0 12px white;
+}
+
+.subnav a:hover::after {
+  width: 100%;
+}
+
+.subnav a.active {
+  color: white;
+  text-shadow: 0 0 8px white, 0 0 12px white;
+}
+
+.subnav a.active::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .subnav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Conteúdo principal */
+main {
+  padding: 24px;
+  text-align: center;
+  font-size: 24px;
+  min-height: 400px;
+  margin-top: 80px; /* altura do header + nav */
+  z-index: 1;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+
+
+
+/*Por enquanto não mecher*/
+
+.memoryDiv {
+    min-height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+  #memoryDiv {
+
+    display: flex;
+  justify-content: center;
+  align-items: flex-start; /* ou center, se quiser centralizar também na vertical */
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.memory {
+  max-width: 300px;
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.polaroid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.polaroid > img {
+    width: 220px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.imgDiv img {
+    width: 204px;
+    height: 204px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: absolute;
+    margin: -280px 0px 0px -102px;
+    z-index: -1;
+}
+
+.description {
+    width: 210px;
+    max-width: 210px;
+    font-size: 14px;
+    color: white;
+    overflow: hidden;
+    margin-top: 10px;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.textDiv {
+    width: 342px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+#r {
+    margin-top: 12px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    nav div {
+        width: 100%;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: 15vh;
+        flex-direction: column;
+    }
+
+    .textDiv {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
